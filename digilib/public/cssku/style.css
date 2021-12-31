@@ -1,0 +1,27 @@
+.blacktext{
+    color: #111 ;
+
+}
+.whitetext{
+    color: #fff;
+}
+.bgdarkblack{
+    background-color: #1B1D26 ;   
+}
+
+.bgblue{
+    background-color: #344FB7 ;   
+}
+
+.bgdarkblue{
+    background-color: #202831;   
+}
+
+.bgwhite{
+    background-color: #fff;   
+}
+
+.imgcard{
+    max-height: 20rem;
+    min-height: 20rem;
+}
