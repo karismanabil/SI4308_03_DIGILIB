@@ -25,3 +25,13 @@
     max-height: 20rem;
     min-height: 20rem;
 }
+.imgcard2{
+    max-height: 25rem;
+    min-height: 320px;
+    min-width: 282px;
+}
+.imgcard3{
+    min-width: auto;
+    max-height: auto;
+    min-height: auto;
+}

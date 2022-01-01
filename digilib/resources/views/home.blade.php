@@ -13,6 +13,7 @@
             <div class="mb-3">
                 <p class="text-center m-0 p-0">Tersedia berbagai macam buku Jurnal, Artikel, Filsafat, Ilmu Sosial, Agama, dan Bahasa</p>
             </div>
+{{-- search --}}
             <div class="d-flex justify-content-center ">
                 <div class="input-group mb-3 w-50 text-center">
                     <input type="text" class=" form-control" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -20,11 +21,11 @@
                 </div>
             </div>
             <hr>
-
-
+{{-- search close --}}
+{{-- card --}}
             <div class="flex-wrap justify-content-center d-flex py-3">
                 <div class="mx-2">
-                    <a href="" class="text-decoration-none link-dark">
+                    <a href="/detailbooks" class="text-decoration-none link-dark">
                         <div class="card  h-100" style="width: 14rem;">
                             <img src="upload/cover1.jpg" class="card-img-top imgcard" alt="">
                             <div class="card-body">
@@ -68,7 +69,26 @@
                     </a>
                 </div>
             </div>
-
+{{-- card close --}}
+{{-- pagination --}}
+            <div class="mt-3 d-flex justify-content-center">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                    <li class="page-item disabled">
+                        <a class="page-link">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item " aria-current="page">
+                        <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                    </ul>
+                </nav>   
+            </div> 
+{{-- pagination close --}}
     </div>
 </div>
 @endsection
