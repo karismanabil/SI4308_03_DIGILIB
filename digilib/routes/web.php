@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::get('/register', function () {
+    return view('registrasi');
+});
+
 Route::get('/detailbooks', function () {
     return view('detailbooks');
+});
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
 });
