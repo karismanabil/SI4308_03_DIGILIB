@@ -24,3 +24,7 @@ Route::get('/detailbooks', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/faq', function () {
+    return view('faq');
+});
