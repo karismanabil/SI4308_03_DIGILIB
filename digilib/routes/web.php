@@ -36,3 +36,7 @@ Route::get('/dashboard', function () {
 Route::get('/faq', function () {
     return view('faq');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});
