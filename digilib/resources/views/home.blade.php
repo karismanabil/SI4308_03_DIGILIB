@@ -24,50 +24,22 @@
 {{-- search close --}}
 {{-- card --}}
             <div class="flex-wrap justify-content-center d-flex py-3">
+                @foreach ($katalog as $display)
+                    
                 <div class="mx-2">
-                    <a href="/detailbooks" class="text-decoration-none link-dark">
+                    <a href="/detailbooks/{{ $display["slug"] }}" class="text-decoration-none link-dark">
                         <div class="card  h-100" style="width: 14rem;">
-                            <img src="upload/cover1.jpg" class="card-img-top imgcard" alt="">
+                            <img src="{{ $display["gambar"] }}" class="card-img-top imgcard" alt="">
                             <div class="card-body">
-                            <h5 class="card-title">Business Startup</h5>
-                            <p class="card-text">Businness stratup book by Jen Krazel</p>
+                            <h5 class="card-title">{{ $display["title"] }}</h5>
+                            <p class="card-text">{{ $display["slug"] }}</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="mx-2">
-                    <a href="" class="text-decoration-none link-dark">
-                        <div class="card  h-100" style="width: 14rem;">
-                            <img src="upload/cover1.jpg" class="card-img-top imgcard" alt="">
-                            <div class="card-body">
-                            <h5 class="card-title">Business Startup</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="mx-2">
-                    <a href="" class="text-decoration-none link-dark">
-                        <div class="card  h-100" style="width: 14rem;">
-                            <img src="upload/cover1.jpg" class="card-img-top imgcard" alt="">
-                            <div class="card-body">
-                            <h5 class="card-title">Business Startup</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="mx-2">
-                    <a href="" class="text-decoration-none link-dark">
-                        <div class="card  h-100" style="width: 14rem;">
-                            <img src="upload/cover1.jpg" class="card-img-top imgcard" alt="">
-                            <div class="card-body">
-                            <h5 class="card-title">Business Startup</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+
+                @endforeach
+
             </div>
 {{-- card close --}}
 {{-- pagination --}}

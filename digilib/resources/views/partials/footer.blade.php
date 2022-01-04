@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="/cssku/style.css">
+
 <section id="FOOTER">
     <div class="p-5 bgdarkblue text-light">
         <div class="row ">

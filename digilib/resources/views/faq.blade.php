@@ -2,8 +2,9 @@
 
 @section('container')
 <!-- konten -->
-  <div class="container mt-2 mb-5">
-    <h4 class="judul mt-4" style="color: #00BFFF;">Frequently Asked Question</h4>
+<div class="m-5 p-5">
+  <div class="container">
+    <h4 class="text-center mt-4">Frequently Asked Question</h4>
     <br>
 
     <!-- Konten 1 -->
@@ -48,7 +49,7 @@
     </div>
   
     <!-- endkonten 1 -->
-
+  </div>
 
 <!-- end konten -->
 @endsection

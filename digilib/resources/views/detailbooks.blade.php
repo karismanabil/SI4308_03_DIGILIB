@@ -1,4 +1,5 @@
 @extends('layouts.main')
+<link rel="stylesheet" href="/cssku/style.css">
 
         
 @section('container')
@@ -10,7 +11,7 @@
             <div class="row p-5 shadow-lg">
                 <div class="col-3">
                     <div class="mb-3 d-flex justify-content-center ">
-                        <img src="upload/cover1.jpg" class="imgcard" alt="">
+                        <img src="{{ $detail["gambar"] }}" class="imgcard" alt="">
                     </div>
                     <div class="mb-3 d-grid gap-2">
                         <button class="btn btn-warning shadow-sm ">Add to Favorite</button>
@@ -33,7 +34,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                <p class="p-0 m-0">{{ $detail["title"] }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -44,7 +45,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Lorem ipsum</p>
+                                <p class="p-0 m-0">{{ $detail["jenis"] }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -66,18 +67,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Joseph Joestar</p>
-                            </div>
-                        </div>
-                        <div class=" mb-3 row">
-                            <div class="col-2 p-0">
-                                <p class="p-0 m-0 ">Rating</p>
-                            </div>
-                            <div class="col-1 p-0">
-                                <p class="p-0 m-0 text-center">:</p>
-                            </div>
-                            <div class="col-9 p-0">
-                                <p class="p-0 m-0">8/10</p>
+                                <p class="p-0 m-0">{{ $detail["penulis"] }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -88,7 +78,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Rp-</p>
+                                <p class="p-0 m-0">Rp{{ $detail["harga"] }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -99,7 +89,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa non corporis dolores quidem ad quasi eum suscipit error explicabo iure, atque mollitia voluptates perspiciatis tenetur eaque perferendis rem sunt aliquam! Earum ad similique laborum excepturi praesentium non iste, ducimus eveniet optio corrupti commodi suscipit fugit eos tempore! Dignissimos, corrupti mollitia!</p>
+                                <p class="p-0 m-0">{{ $detail["abstrak"] }}</p>
                             </div>
                         </div>
 
