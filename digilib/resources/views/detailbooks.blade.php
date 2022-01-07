@@ -11,7 +11,7 @@
             <div class="row p-5 shadow-lg">
                 <div class="col-3">
                     <div class="mb-3 d-flex justify-content-center ">
-                        <img src="{{ $detail["gambar"] }}" class="imgcard" alt="">
+                        <img src="/upload/{{ $post->gambar }}" class="imgcard" alt="">
                     </div>
                     <div class="mb-3 d-grid gap-2">
                         <button class="btn btn-warning shadow-sm ">Add to Favorite</button>
@@ -34,7 +34,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">{{ $detail["title"] }}</p>
+                                <p class="p-0 m-0">{{ $post->title }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -45,7 +45,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">{{ $detail["jenis"] }}</p>
+                                <a class="text-decoration-none" href="/jenis/{{ $post->kategori->slug }}"><p class="p-0 m-0">{{ $post->kategori->nama }}</p></a>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -56,7 +56,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">12 Aug 2021</p>
+                                <p class="p-0 m-0">{{ $post->tanggal_rilis }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -67,7 +67,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">{{ $detail["penulis"] }}</p>
+                                <p class="p-0 m-0">{{ $post->penulis }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -78,7 +78,7 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">Rp{{ $detail["harga"] }}</p>
+                                <p class="p-0 m-0">Rp{{ $post->harga }}</p>
                             </div>
                         </div>
                         <div class=" mb-3 row">
@@ -89,14 +89,16 @@
                                 <p class="p-0 m-0 text-center">:</p>
                             </div>
                             <div class="col-9 p-0">
-                                <p class="p-0 m-0">{{ $detail["abstrak"] }}</p>
+                                <p class="p-0 m-0">{{ $post->abstrak }}</p>
                             </div>
                         </div>
-
+                        
                     </div>
-                    
+                    <p class="me-3 float-end ">Posted by {{ $post->user->name }}</p>
                 </div>
             </div>
         </div>
     </div>
 @endsection
+
+

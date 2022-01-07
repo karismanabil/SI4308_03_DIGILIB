@@ -2,31 +2,20 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class Post
+class Post extends Model
 {
-    private static $postbuku = [
-        [
-        "title" => "Judul Pertama",
-        "slug" => "Judul-Tulisan-Pertama",
-        "jenis" => "Artikel",
-        "penulis" => "Joseph Joestar",
-        "gambar" => "/upload/cover1.jpg",
-        "harga" => "-",
-        "abstrak" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa non corporis dolores quidem ad quasi eum suscipit error explicabo iure, atque mollitia voluptates perspiciatis tenetur eaque perferendis rem sunt aliquam! Earum ad similique laborum excepturi praesentium non iste, ducimus eveniet optio corrupti commodi suscipit fugit eos tempore! Dignissimos, corrupti mollitia! ",
-        ],
-        [
-            "title" => "Judul Kedua",
-            "slug" => "Judul-Tulisan-Kedua",
-            "jenis" => "Artikel",
-            "penulis" => "Joseph Joestar",
-            "gambar" => "/upload/cover2.jpg",
-            "harga" => "-",
-            "abstrak" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa non corporis dolores quidem ad quasi eum suscipit error explicabo iure, atque mollitia voluptates perspiciatis tenetur eaque perferendis rem sunt aliquam! Earum ad similique laborum excepturi praesentium non iste, ducimus eveniet optio corrupti commodi suscipit fugit eos tempore! Dignissimos, corrupti mollitia! ",
-            ]
-    ];
+    use HasFactory;
 
-    public static function all(){
-        return self::$postbuku;
+    // protected $fillable = ['title', 'slug', 'excerpt', 'jenis', 'penulis', 'harga', 'gambar', 'abstrak'];
+    protected $guarded = ['id'];
+
+    public function kategori(){
+        return $this->belongsTo(kategori::class);
+    }
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }
