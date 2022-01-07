@@ -16,8 +16,14 @@
       </ul>
       <form class="d-flex align-items-center m-0">
         <ul class="navbar-nav ">
-          <li class="nav-item me-2">
-            <a class="nav-link fw-bold {{ $title === 'Beranda' ? 'active' : '' }}" href="/home"> E-Katalog</a>
+          <li class="nav-item me-2 dropdown">
+            <a class="nav-link dropdown-toggle fw-bold {{ $title === 'Beranda' ? 'active' : '' }}" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              E-Katalog
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="/home">Buku-Buku</a></li>
+              <li><a class="dropdown-item " href="/jenis">Jenis Buku</a></li>
+            </ul>
           </li>
           <li class="nav-item me-2">
             <a class="nav-link fw-bold {{ $title === 'About' ? 'active' : '' }}" href="/about">About</a>

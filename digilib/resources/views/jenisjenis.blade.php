@@ -2,13 +2,10 @@
 
         
 @section('container')
-<div class="text-center bg-dark">
-<iframe  id="iFrame1" class="justify-content-center" width="1200" height="700" src="https://www.youtube.com/embed/BxGf94oT8k0?playlist=BxGf94oT8k0&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1" frameborder="0"></iframe>
-</div>
 <div class="m-5">
-    <div class="container" id="home">
+    <div class="container">
             <div class="mb-3">    
-                <h4 class="text-center">E-Katalog</h4>
+                <h4 class="text-center">Jenis E-Katalog</h4>
             </div>
             <div class="mb-3">
                 <p class="text-center m-0 p-0">Tersedia berbagai macam buku Jurnal, Artikel, Filsafat, Ilmu Sosial, Agama, dan Bahasa</p>
@@ -24,18 +21,25 @@
 {{-- search close --}}
 {{-- card --}}
             <div class="flex-wrap justify-content-center d-flex py-3">
-                @foreach ($posts as $p)
+                @foreach ($jenisjenis as $j)
                     
                 <div class="mx-2 my-2">
-                    <a href="/detailbooks/{{ $p->slug }}" class="text-decoration-none link-dark">
-                        <div class="card  h-100" style="width: 14rem;">
-                            <img src="/upload/{{ $p->gambar }}" class="card-img-top imgcard" alt="">
-                            <div class="card-body">
-                            <h5 class="card-title">{{ $p->title }}</h5>
-                            <p class="card-text">{{ $p->excerpt }}</p>
-                            </div>
+                    <a href="/jenis/{{ $j->slug }}" class="text-decoration-none link-dark">
+                    <div class="card text-dark bg-light mb-3" style="max-width: 14rem;">
+                        <div class="card-header">Jenis E-Katalog</div>
+                        <div class="card-body">
+                          <h5 class="card-title">{{ $j->nama }}</h5>
+                          <p class="card-text">Jenis {{ $j->nama }} berisi beberapa buku yang dapat anda baca</p>
                         </div>
+                      </div>
                     </a>
+                    {{-- <ul>
+                        <li>
+                            <a href="/jenis/{{ $j->slug }}" class="text-decoration-none link-dark">
+                            {{ $j->nama }}
+                            </a>
+                        </li>
+                    </ul> --}}
                 </div>
 
                 @endforeach
