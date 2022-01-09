@@ -60,6 +60,13 @@ Route::get('/about', function () {
     ]);
 });
 
+Route::get('/profile', function () {
+    return view('profile', [
+        "title" => "Profile"
+        
+    ]);
+});
+
 //home
 Route::get('/home',[PostController::class, 'index']);
 
