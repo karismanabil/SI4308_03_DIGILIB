@@ -11,14 +11,14 @@
             <div class="row p-5 shadow-lg">
                 <div class="col-3">
                     <div class="mb-3 d-flex justify-content-center ">
-                        <img src="/upload/{{ $post->gambar }}" class="imgcard" alt="">
+                        <img src="/uploaded/{{ $post->gambar }}" class="imgcard" alt="">
                     </div>
                     <div class="mb-3 d-grid gap-2">
                         <button class="btn btn-warning shadow-sm ">Add to Favorite</button>
                     
                         <button class="btn btn-success shadow-sm ">Download</button>
-                    
-                        <button class="btn btn-primary shadow-sm ">Borrow the book</button>
+                        
+                        <a href="{{route('pinjam', ['id' => $post->id])}}" class="btn btn-primary shadow-sm ">Borrow the book</a>
                     
                         <button class="btn btn-light shadow-sm ">Add Review</button>
                     </div>
@@ -94,7 +94,7 @@
                         </div>
                         
                     </div>
-                    <p class="me-3 float-end ">Posted by {{ $post->user->name }}</p>
+                    {{-- <p class="me-3 float-end ">Posted by {{ $post->user->name }}</p> --}}
                 </div>
             </div>
         </div>

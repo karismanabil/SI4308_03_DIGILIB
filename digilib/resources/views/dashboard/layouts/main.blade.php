@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Digilib | Dashboard Admin</title>
+    <title>Digilib | {{ $title }}</title>
     <link href="/cssku/dashboard.css" rel="stylesheet">
     <link href="/cssku/style.css" rel="stylesheet">
     <!-- Bootstrap core CSS -->

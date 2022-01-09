@@ -3,7 +3,7 @@
 <div class="m-5">
     <div class="container" id="">
             <div class="mb-3">    
-                <h4 class="text-center">Jenis : E-Katalog </h4>
+                <h4 class="text-center">E-Katalog : {{ $title }}</h4>
             </div>
             <div class="mb-3">
                 <p class="text-center m-0 p-0">Tersedia berbagai macam buku Jurnal, Artikel, Filsafat, Ilmu Sosial, Agama, dan Bahasa</p>
@@ -29,7 +29,7 @@
                     <a href="/detailbooks/{{ $p->slug }}" class="text-decoration-none link-dark">
                         <div class="card  h-100" style="width: 14rem;">
                             <img src="/uploaded/{{ $p->gambar }}" class="card-img-top  imgcard" alt="">
-                            <div class="position-absolute container-fluid  py-1 text-center" style="background-color:rgba(0, 0, 0, 0.4);"><a class="text-white text-decoration-none" href="/bukubuku/{{ $p->kategori->slug }}">{{ $p->kategori->nama }}</a></div>
+                            <div class="position-absolute container-fluid  py-1 text-center" style="background-color:rgba(0, 0, 0, 0.4);"><a class="text-white text-decoration-none" href="/jenis/{{ $p->kategori->slug }}">{{ $p->kategori->nama }}</a></div>
                             
                             <div class="card-body">
                                 <h5 class="card-title">{{ $p->title }}</h5>
@@ -42,9 +42,9 @@
                 @endforeach
 
             </div>
-           {{-- <div class="mt-3 d-flex justify-content-center">
+            <div class="mt-3 d-flex justify-content-center">
                 {{ $posts->links() }}   
-            </div>   --}}
+            </div> 
 {{-- card close --}}
 @else
 <p class="text-center fs-5 fw-bold p-0 m-0">No Book Found.</p>
