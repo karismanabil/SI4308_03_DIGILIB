@@ -3,7 +3,7 @@
         
 @section('container')
 <div class="text-center bg-dark">
-{{-- <iframe  id="iFrame1" class="justify-content-center" width="1200" height="700" src="https://www.youtube.com/embed/BxGf94oT8k0?playlist=BxGf94oT8k0&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1" frameborder="0"></iframe> --}}
+<iframe  id="iFrame1" class="justify-content-center" width="1200" height="700" src="https://www.youtube.com/embed/BxGf94oT8k0?playlist=BxGf94oT8k0&iv_load_policy=3&enablejsapi=1&disablekb=1&autoplay=1&controls=0&showinfo=0&rel=0&loop=1&wmode=transparent&widgetid=1&mute=1" frameborder="0"></iframe>
 </div>
 <div class="m-5">
     <div class="container" id="home">
