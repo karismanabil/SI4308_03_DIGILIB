@@ -2,19 +2,6 @@
 <link rel="stylesheet" href="/cssku/style.css">
 
 
-<div class="flex-wrap justify-content-center d-flex py-3">
-    <div class="mx-2 my-2">
-        <a href="" class="text-decoration-none link-dark">
-            <div class="card  h-100" style="width: 14rem;">
-                <img src="" class="card-img-top imgcard" alt="">
-                <div class="card-body">
-                <h5 class="card-title">as</h5>
-                <p class="card-text">sd</p>
-                </div>
-            </div>
-        </a>
-    </div>
-</div>
 
 {{-- Profile --}}
 @section('container')
