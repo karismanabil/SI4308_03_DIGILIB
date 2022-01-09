@@ -1,10 +1,9 @@
 <?php
 
-use App\Models\Post;
+use App\Models\kategori;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
-use App\Models\kategori;
-use App\Models\User;
+use App\Http\Controllers\LoginRegisController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,34 +16,6 @@ use App\Models\User;
 |
 */
 
-
-
-
-
-Route::get('/login', function () {
-    return view('login', [
-        "title" => "Login"
-        
-    ]);
-});
-
-Route::get('/register', function () {
-    return view('registrasi', [
-        "title" => "Registrasi"
-        
-    ]);
-});
-
-// Route::get('/detailbooks', function () {
-//     return view('detailbooks', [
-//         "title" => "DetailBooks"
-        
-//     ]);
-// });
-
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-});
 
 Route::get('/faq', function () {
     return view('faq', [
@@ -60,6 +31,7 @@ Route::get('/about', function () {
     ]);
 });
 
+<<<<<<< HEAD
 Route::get('/profile', function () {
     return view('profile', [
         "title" => "Profile"
@@ -69,25 +41,57 @@ Route::get('/profile', function () {
 
 //home
 Route::get('/home',[PostController::class, 'index']);
+=======
+//halaman awal
+Route::get('/',[PostController::class, 'index']);
+
+//halaman Buku
+Route::get('/bukubuku',[PostController::class, 'buku']);
+>>>>>>> 0707e8fe7800591996ab98d158471be556bda127
 
 //halaman detail books
-Route::get('/detailbooks/{post:slug}', [PostController::class, 'show']);
+Route::get('/detailbooks/{post:slug}', [PostController::class, 'detail']);
 
-//halaman kategori jenis
-// Route::get('jenis/{kategori:slug}', [PostController::class, 'show']);
-Route::get('/jenis/{kategori:slug}',function(kategori $kategori){
-    return view('jenis', [
-        'title' => $kategori->nama,
-        'posts' => $kategori->posts,
-        'jenis' => $kategori->nama
-    ]);
-});
+
+Route::get('/jenis/{kategori:slug}', [PostController::class, 'jenis'] );
 
 //halaman kategories
 Route::get('/jenis',function(kategori $kategori){
     return view('jenisjenis', [
         'title' => $kategori->nama,
-        'jenisjenis' => kategori::all()
+        'jenisjenis' => kategori::orderBy('nama')->get(),
     ]);
 });
 
+Route::get('/loginuser', [LoginRegisController::class, 'loginuser'] );
+// Route::post('/loginuser', [LoginRegisController::class, 'authenticate'] );
+// Route::post('/logout', [LoginRegisController::class, 'logout'] );
+
+
+Route::get('/registeruser', [LoginRegisController::class, 'registeruser'] );
+// Route::post('/registeruser', [LoginRegisController::class, 'store'] );
+
+
+
+Route::get('/loginadmin', [LoginRegisController::class, 'loginadmin'] );
+Route::post('/loginadmin', [LoginRegisController::class, 'loginadminwork'] )->name('loginadminwork');
+
+Route::get('/registeradmin', [LoginRegisController::class, 'registeradmin'] );
+Route::post('/registeradmin', [LoginRegisController::class, 'createadmin'] )->name('createadmin');
+
+
+
+Route::get('/dashboard', [PostController::class, 'indexdashboard']);
+
+Route::get('/mypost', [PostController::class, 'mypost']);
+Route::get('/createpost', [PostController::class, 'createpostindex']);
+Route::post('/createpost', [PostController::class, 'createbook'])->name('createbook');
+Route::get('/deletebook/{id}', [PostController::class, 'deletebook'])->name('deletebook');
+Route::get('/editpost/{id}', [PostController::class, 'editbookindex'])->name('editbook');
+Route::post('/editpost/{id}', [PostController::class, 'updatebook'])->name('updatebook');
+
+Route::get('/pinjam/{id}', [PostController::class, 'pinjam'])->name('pinjam');
+Route::post('/createpinjam', [PostController::class, 'createpinjam'])->name('createpinjam');
+
+
+// Route::resource('/dashboard/posts', [DashboardPostController::class])->middleware('auth');
