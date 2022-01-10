@@ -31,7 +31,6 @@ Route::get('/about', function () {
     ]);
 });
 
-<<<<<<< HEAD
 Route::get('/profile', function () {
     return view('profile', [
         "title" => "Profile"
@@ -41,13 +40,6 @@ Route::get('/profile', function () {
 
 //home
 Route::get('/home',[PostController::class, 'index']);
-=======
-//halaman awal
-Route::get('/',[PostController::class, 'index']);
-
-//halaman Buku
-Route::get('/bukubuku',[PostController::class, 'buku']);
->>>>>>> 0707e8fe7800591996ab98d158471be556bda127
 
 //halaman detail books
 Route::get('/detailbooks/{post:slug}', [PostController::class, 'detail']);
